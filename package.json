@@ -1,0 +1,31 @@
+{
+  "name": "uikit",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@storybook/addon-essentials": "^9.0.0-alpha.12",
+    "material-icons": "^1.13.14",
+    "storybook": "^9.0.13",
+    "vite": "^6.3.5",
+    "vue-virtual-scroller": "^2.0.0-beta.8"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^9.0.13",
+    "@storybook/vue3-vite": "^9.0.13",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vitejs/plugin-vue-jsx": "^5.0.0",
+    "gh-pages": "^6.3.0",
+    "sass": "^1.89.2",
+    "unplugin-vue-define-options": "^3.0.0-beta.15",
+    "unplugin-vue-macros": "^2.14.5"
+  }
+}

@@ -1,0 +1,1 @@
+export type LoadItems<T> = (skip: number, take: number, searchValue: string) => Promise<T[]>;
