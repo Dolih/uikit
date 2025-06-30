@@ -1,0 +1,1 @@
+declare module '@storybook/testing-vue3';

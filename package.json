@@ -6,7 +6,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "deploy-storybook": "gh-pages -d storybook-static",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:unit": "vitest --ui"
   },
   "author": "",
   "license": "ISC",
@@ -20,12 +20,22 @@
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^9.0.13",
+    "@storybook/testing-library": "^0.2.2",
     "@storybook/vue3-vite": "^9.0.13",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/vue": "^8.1.0",
+    "@types/jest": "^30.0.0",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vitejs/plugin-vue-jsx": "^5.0.0",
+    "@vitest/ui": "^3.2.4",
+    "@vue/test-utils": "^2.4.6",
+    "depcheck": "^1.4.7",
     "gh-pages": "^6.3.0",
+    "happy-dom": "^18.0.1",
+    "jsdom": "^26.1.0",
     "sass": "^1.89.2",
     "unplugin-vue-define-options": "^3.0.0-beta.15",
-    "unplugin-vue-macros": "^2.14.5"
+    "unplugin-vue-macros": "^2.14.5",
+    "vitest": "^3.2.4"
   }
 }

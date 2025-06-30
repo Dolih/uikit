@@ -165,7 +165,7 @@
     if(!(event.currentTarget as HTMLElement).contains(event.relatedTarget as HTMLElement)) {
       if(autocompleteInput.value) autocompleteInput.value.blur();
       isFocus.value = false;
-      if(event.relatedTarget) isMenuOpen.value = false;
+      if(!event.relatedTarget) isMenuOpen.value = false;
     }
   };
   
@@ -315,17 +315,8 @@
     resizeObserver.disconnect();
   });
   </script>
-  <style scoped lang="scss">
-  $main-color: white;
-  $accent-color: #253B4D;
-  $border-radius: 12px;
-  
-  $input-bg-color: #E8F2F9;
-  $chip-bg-color: $accent-color;
-  $chip-text-color: $main-color;
-  $dropdown-bg-color: $main-color;
-  $checkbox-color: $accent-color;
-  $dropdown-btn-bg-color:  $accent-color;
+  <style lang="scss">
+  @import './Autocomplete.variables.scss';
   
   .autocomplete {
     display: flex;
@@ -333,9 +324,10 @@
     width: 300px;
     min-height: 40px;
     box-sizing: border-box;
-    background-color: $input-bg-color;
-    border-radius: $border-radius;
+    background-color: var(--input-bg-color);
+    border-radius: var(--border-radius);
     box-shadow: 0 0 16px 0 rgba(170, 175, 185, .2);
+    color: var(--text-color);
   
     padding: 8px;
   
@@ -362,8 +354,8 @@
       display: flex;
       gap: 8px;
   
-      background-color: $chip-bg-color;
-      color: $chip-text-color;
+      background-color: var(--chip-bg-color);
+      color: var(--chip-text-color);
       border-radius: 8px;
       padding: 2px 8px;
       font-size: 16px;
@@ -380,8 +372,8 @@
   
         width: 16px;
         height: 16px;
-        background-color: $chip-text-color;
-        color: $chip-bg-color;
+        background-color: var(--chip-text-color);
+        color: var(--chip-bg-color);
         border-radius: 50%;
   
         font-size: 14px;
@@ -399,6 +391,7 @@
       outline: none;
       background-color: transparent;
       box-shadow: none;
+      color: var(--text-color);
     }
   
     &__dropdown-button {
@@ -411,7 +404,7 @@
       cursor: pointer;
   
       i {
-        color: $dropdown-btn-bg-color;
+        color: var(--dropdown-btn-bg-color)
       }
     }
   }
@@ -420,11 +413,12 @@
     position: fixed;
     width: 300px;
     height: 300px;
-    background-color: $dropdown-bg-color;
-    border-radius: $border-radius;
+    background-color: var(--dropdown-bg-color);
+    border-radius: var(--border-radius);
     box-shadow: 0 0 16px 0 rgba(170, 175, 185, .3);
     padding: 8px 16px;
     z-index: 10000;
+    color: var(--text-color);
   
     &__scroller{
       scrollbar-width: none;
@@ -450,7 +444,7 @@
       width: 22px;
       height: 22px;
       box-sizing: border-box;
-      border: 2px solid $checkbox-color;
+      border: 2px solid var(--checkbox-color);
       border-radius: 4px;
       transition: all 0.3s ease-in-out;
       svg {
@@ -458,7 +452,7 @@
       }
   
       &_active {
-        background-color: $checkbox-color;
+        background-color: var(--checkbox-color);
         svg {
           opacity: 1;
         }
